@@ -1,0 +1,78 @@
+{
+  "name": "@hanhdt/sample-service",
+  "version": "0.1.1",
+  "publishConfig": {
+    "directory": "dist"
+  },
+  "bin": {
+    "canframes": "infrastructure/canframesApp.ts"
+  },
+  "scripts": {
+    "clean": "npx shx rm -rf dist tsconfig.tsbuildinfo .rush .nyc_output *.log",
+    "build": "tsc",
+    "watch": "tsc -w",
+    "cdk": "cdk",
+    "deploy:dev": "cdk --app dist/infrastructure/canframesApp.js deploy -c config=dev",
+    "deploy:prod": "cdk --app dist/infrastructure/canframesApp.js deploy -c config=prod",
+    "destroy:dev": "cdk --app dist/infrastructure/canframesApp.js destroy -c config=dev",
+    "destroy:prod": "cdk --app dist/infrastructure/canframesApp.js destroy -c config=prod",
+    "diff:dev": "cdk --app 'npx ts-node infrastructure/canframesApp.ts' diff -c config=dev",
+    "diff:prod": "cdk --app 'npx ts-node infrastructure/canframesApp.ts' diff -c config=prod",
+    "test:jest": "jest --coverage --detectOpenHandles",
+    "test:cucumber": "./node_modules/.bin/cucumber-js -p default",
+    "coverage:cucumber": "nyc npm run test:cucumber --reporter=lcov --reporter=text-summary"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "7.3.2",
+    "@cucumber/pretty-formatter": "^1.0.0",
+    "@istanbuljs/nyc-config-typescript": "^1.0.2",
+    "@mrgrain/cdk-esbuild": "^4.1.5",
+    "@rushstack/eslint-config": "2.3.4",
+    "@types/aws-lambda": "^8.10.114",
+    "@types/chai": "^4.3.4",
+    "@types/chai-string": "^1.4.2",
+    "@types/chai-uuid": "^1.0.2",
+    "@types/jest": "^29.5.1",
+    "@types/node": "^18.14.6",
+    "@types/superagent": "4.1.15",
+    "@types/uuid": "^9.0.1",
+    "aws-cdk": "2.73.0",
+    "aws-sdk": "^2.1353.0",
+    "chai": "^4.3.7",
+    "chai-string": "^1.5.0",
+    "chai-uuid": "^1.0.6",
+    "jest": "^29.5.0",
+    "nyc": "^15.1.0",
+    "superagent": "7.1.1",
+    "ts-jest": "^29.0.5",
+    "ts-node": "^10.9.1",
+    "typescript": "~4.9.5"
+  },
+  "dependencies": {
+    "@hanhdt/logger": "^1.0.0",
+    "@hanhdt/config-inject": "^1.0.0",
+    "aws-cdk-lib": "2.73.0",
+    "constructs": "^10.0.0",
+    "ow": "0.23.0",
+    "uuid": "^9.0.0"
+  },
+  "nyc": {
+    "extends": "@istanbuljs/nyc-config-typescript",
+    "include": [
+      "src/**/*.ts"
+    ],
+    "exclude": [
+      "src/**/*.spec.ts",
+      "src/**/*.test.ts",
+      "src/**/*.steps.ts",
+      "src/**/*.feature.ts"
+    ],
+    "reporter": [
+      "text",
+      "html"
+    ],
+    "all": true,
+    "check-coverage": true,
+    "lines": 100
+  }
+}

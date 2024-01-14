@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/deploy-scenario.schema.json",
+  "deploymentProjectNames": [
+    "@hanhdt/sample-service"
+  ],
+  "omitPnpmWorkaroundLinks": false,
+  "projectSettings": [
+    {
+      "projectName": "@hanhdt/sample-service",
+      "dependenciesToExclude": ["aws-sdk"]
+    }
+  ]
+}

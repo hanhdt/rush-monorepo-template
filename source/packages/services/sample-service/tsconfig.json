@@ -1,0 +1,26 @@
+{
+  "extends": "../../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "rootDir": ".",
+    "lib": [
+      "es2020"
+    ],
+    "typeRoots": [
+      "./node_modules/@types"
+    ],
+    "resolveJsonModule": true,
+    "esModuleInterop": true
+  },
+  "include": [ "./" ],
+  "exclude": [
+    "node_modules",
+    "cdk.out",
+    "../node_modules",
+		"dist",
+		".vscode",
+		".git",
+		"./**/__mocks__/*.ts",
+    "test",
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "AWSAccountID": "<accountId>",
+  "AWSProfileName": "<profileName>",
+  "AWSProfileRegion": "ap-northeast-1",
+
+  "Solution": "<solutionName>",
+  "Environment": "dev",
+  "App": "<appName>",
+
+  "Version": "0.0.1",
+  "Build": "0",
+  "QualifierCustom": "hnb659fds",
+
+  "LogLevel": "info"
+}

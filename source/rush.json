@@ -1,0 +1,46 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/rush.schema.json",
+  "rushVersion": "5.100.1",
+  "pnpmVersion": "8.6.2",
+  "projects": [
+    {
+      "packageName": "@hanhdt/sample-service",
+      "projectFolder": "packages/services/sample-service",
+      "reviewCategory": "production",
+      "shouldPublish": true
+    },
+    {
+      "packageName": "@hanhdt/logger",
+      "projectFolder": "packages/libraries/core/logger",
+      "reviewCategory": "library",
+      "shouldPublish": false
+    },
+    {
+      "packageName": "@hanhdt/config-inject",
+      "projectFolder": "packages/libraries/core/config-inject",
+      "reviewCategory": "library",
+      "shouldPublish": false
+    }
+  ],
+  "pnpmOptions": {
+    "strictPeerDependencies": false,
+    "preventManualShrinkwrapChanges": true
+  },
+  "nodeSupportedVersionRange": ">=16.0.0 <20.0.0",
+  "projectFolderMinDepth": 2,
+  "projectFolderMaxDepth": 4,
+  "gitPolicy": {},
+  "repository": {
+    "url": "https://github.com/hanhdt/ts-microservices-rush-boilerplate.git",
+    "defaultBranch": "develop",
+    "defaultRemote": "origin"
+  },
+  "eventHooks": {
+    "preRushInstall": [],
+    "postRushInstall": [],
+    "preRushBuild": [],
+    "postRushBuild": []
+  },
+  "variants": [],
+  "telemetryEnabled": false
+}

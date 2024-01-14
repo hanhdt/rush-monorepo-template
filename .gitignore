@@ -1,0 +1,15 @@
+.vscode/*
+node_modules/
+dist/
+temp/
+deploy/
+global-s3-assets/
+regional-s3-assets/
+*.build.log
+tsconfig.tsbuildinfo
+*.zip
+.pnpm-debug.log
+pnpm-lock.yaml
+repo-state.json
+app-config-dev.json
+app-config-prod.json
